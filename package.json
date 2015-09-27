@@ -4,12 +4,16 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "gulp": "^3.9.0",
     "react": "^0.14.0-rc1",
     "react-dom": "^0.14.0-rc1",
     "typescript": "^1.6.2"
   },
   "devDependencies": {
-    "tsd": "^0.6.4"
+    "del": "^2.0.2",
+    "gulp-typescript": "^2.9.0",
+    "tsd": "^0.6.4",
+    "webpack": "^1.12.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
