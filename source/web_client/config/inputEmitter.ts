@@ -3,8 +3,9 @@
 import keyboardmaster = require("keymaster");
 import events = require("events");
 import IInputDictionary = require("./IInputDictionary");
-import keys = require("./keys");
-import mouse = require("./mouse");
+
+import keys = require("./keys.ts");
+import mouse = require("./mouse.ts");
 
 class InputEmitter extends events.EventEmitter
 {
@@ -17,10 +18,21 @@ class InputEmitter extends events.EventEmitter
       this.registerKey(key, keys[key]);
     }
 
-    // todo mouse
+    for (var button in mouse)
+    {
+      this.registerButton(button, mouse[button]);
+    }
   }
 
-  registerKey(key:string, map:string)
+  private registerButton(button: string, map: string)
+  {
+    document.addEventListener(button, (e:MouseEvent) =>
+    {
+      this.buttonCalled(button, map, e);
+    });
+  }
+
+  private registerKey(key:string, map:string)
   {
     keyboardmaster(map, (e:KeyboardEvent) =>
     {
@@ -28,7 +40,12 @@ class InputEmitter extends events.EventEmitter
     });
   }
 
-  keyCalled(key:string, map:string, e:KeyboardEvent)
+  private buttonCalled(button: string, map: string, mouseEvent: MouseEvent)
+  {
+    this.emit(button, mouseEvent);
+  }
+
+  private keyCalled(key:string, map:string, e:KeyboardEvent)
   {
     this.emit(key, e);
   }

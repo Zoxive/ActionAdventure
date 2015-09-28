@@ -3,24 +3,22 @@
 
 import React = require("react");
 import ReactDOM = require("react-dom");
-//import inputEmitter = require("./config/inputEmitter");
 
-class DemoProps
+import PlayerHandler = require("./handler/playerhandler.tsx");
+import Player = require("./pawns/player.tsx");
+
+interface IDemoProps
 {
-  public test:string;
+  test:string;
 }
 
-class App extends React.Component<DemoProps, any>
+class App extends React.Component<IDemoProps, any>
 {
-  componentDidMount()
-  {
-  }
-
   render()
   {
     return (
       <div style={{width: "100%", height: "100%"}}>
-        <div>{this.props.test}</div>
+        <PlayerHandler player={Player} name="Player" />
       </div>
     );
   }
