@@ -11,11 +11,13 @@ class DemoProps
 
 class App extends React.Component<DemoProps, any>
 {
-  static defaultProps = { test: "adsf3" };
-
   render()
   {
-    return <div>{this.props.test}</div>
+    return (
+      <div>
+        <div>{this.props.test}</div>
+      </div>
+    );
   }
 }
 
