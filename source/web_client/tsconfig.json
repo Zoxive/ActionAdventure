@@ -6,6 +6,7 @@
         "moduleResolution": "node",
         "isolatedModules": false,
         "jsx": "react",
+        "sourceMap": true,
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
         "declaration": false,
@@ -24,6 +25,6 @@
         "./index.tsx"
     ],
     "scripts": {
-        "postbuild": "rm *.js"
+        "postbuild": "rm *.js *.js.map"
     }
 }

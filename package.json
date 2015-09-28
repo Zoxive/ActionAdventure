@@ -15,7 +15,8 @@
     "del": "^2.0.2",
     "gulp-typescript": "^2.9.0",
     "tsd": "^0.6.4",
-    "webpack": "^1.12.2"
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.12.0"
   },
   "scripts": {
     "build": "gulp build",

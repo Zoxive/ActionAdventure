@@ -1,37 +1,30 @@
 /// <reference path="../../typings/tsd.d.ts" />
 import express = require("express");
-import webpack = require("webpack");
+
+var webpack = require("webpack");
+var webpackConfig = require("../webpack.config");
+var webpackDevMiddleware = require("webpack-dev-middleware");
 
 var app = express();
 
-app.use(express.static("wwwroot"));
-
 app.listen(3000);
 
-//var compiler = webpack.
+var compiler = webpack(webpackConfig);
 
-/*
-var compiler = webpack(
+app.use(webpackDevMiddleware(compiler,
 {
-  ouput:
-  {
-    path: "/"
+  publicPath: "/app/",
+  // public path to bind the middleware to
+  // use the same as in webpack
+
+  headers: { "X-Custom-Header": "yes" },
+  // custom headers
+
+  stats: {
+      colors: true
   }
-});
-*/
-
-/*
-var webpackDevMiddleware = require("webpack-dev-middleware");
-var webpack = require("webpack");
-
-var compiler = webpack({
-    // configuration
-    output: { path: '/' }
-});
-
-app.use(webpackDevMiddleware(compiler, {
-    // options
 }));
-*/
+
+app.use(express.static("wwwroot"));
 
 console.log("Started http server on localhost:3000");

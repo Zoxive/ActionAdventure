@@ -3,25 +3,8 @@ var gutil = require("gulp-util");
 var tsc = require("gulp-typescript");
 var del = require("del");
 var webpack = require("webpack");
-
-var paths =
-{
-    server:
-    {
-        source: ["source/server/**/*.ts"],
-        output: "./bin"
-    },
-    web_client:
-    {
-        entry: "index.js",
-        source:
-        [
-            "source/web_client/**/*.ts",
-            "source/web_client/**/*.tsx"
-        ],
-        output: "./wwwroot/app"
-    }
-};
+var paths = require("./paths");
+var webpackConfig = require("./webpack.config");
 
 var typescriptSettings =
 {
@@ -42,27 +25,7 @@ gulp.task("build:web_client", [], function(cb)
 {
     del.sync([paths.web_client.output]);
 
-    var entry = [paths.web_client.source + "/" + paths.web_client.entry];
-
-    webpack(
-    {
-        entry: entry,
-        output:
-        {
-            path: paths.web_client.output,
-            filename: "app.js",
-            sourceMapFilename: "[file].map"
-        },
-        module:
-        {
-          loaders:
-          [
-            { test: /\.ts$/, loader: 'ts-loader' },
-            { test: /\.tsx$/, loader: 'ts-loader' }
-          ]
-        },
-        devtool: "source-map"
-    },function(err, status)
+    webpack(webpackConfig,function(err, status)
     {
         if (err) throw new gutil.PluginError("web_client.webpack", err);
         gutil.log("[webpack]", status.toString({ colors: true }));
