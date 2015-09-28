@@ -6,6 +6,7 @@
   "dependencies": {
     "express": "^4.13.3",
     "gulp": "^3.9.0",
+    "keymaster": "^1.6.2",
     "react": "^0.14.0-rc1",
     "react-dom": "^0.14.0-rc1",
     "ts-loader": "^0.5.5",

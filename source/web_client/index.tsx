@@ -3,6 +3,7 @@
 
 import React = require("react");
 import ReactDOM = require("react-dom");
+//import inputEmitter = require("./config/inputEmitter");
 
 class DemoProps
 {
@@ -11,10 +12,14 @@ class DemoProps
 
 class App extends React.Component<DemoProps, any>
 {
+  componentDidMount()
+  {
+  }
+
   render()
   {
     return (
-      <div>
+      <div style={{width: "100%", height: "100%"}}>
         <div>{this.props.test}</div>
       </div>
     );

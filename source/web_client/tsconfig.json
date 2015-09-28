@@ -22,9 +22,13 @@
         "!./node_modules/**/*"
     ],
     "files": [
+        "./config/IInputDictionary.ts",
+        "./config/inputEmitter.ts",
+        "./config/keys.ts",
+        "./config/mouse.ts",
         "./index.tsx"
     ],
     "scripts": {
-        "postbuild": "rm *.js *.js.map"
+        "postbuild": "find . -type f -name '*.js' -delete -o -name '*.js.map' -delete"
     }
 }

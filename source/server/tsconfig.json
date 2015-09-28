@@ -25,6 +25,6 @@
         "./index.ts"
     ],
     "scripts": {
-        "postbuild": "rm *.js *.js.map"
+        "postbuild": "find . -type f -name '*.js' -delete -o -name '*.js.map' -delete"
     }
 }

@@ -22,6 +22,9 @@
     },
     "webpack/webpack.d.ts": {
       "commit": "3b7f250dcf631f1c3c545e28d9ff25920c60b5f7"
+    },
+    "keymaster/keymaster.d.ts": {
+      "commit": "3b7f250dcf631f1c3c545e28d9ff25920c60b5f7"
     }
   }
 }
