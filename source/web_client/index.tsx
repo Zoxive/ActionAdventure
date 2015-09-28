@@ -1,8 +1,8 @@
 /// <reference path="../../typings/tsd.d.ts" />
-//import Router = require('react-router');
-import React = require('react');
+/// <reference path="../../typingscustom/react-dom.d.ts" />
 
-//var Route = Router.Route;
+import React = require("react");
+import ReactDOM = require("react-dom");
 
 class DemoProps
 {
@@ -19,17 +19,4 @@ class App extends React.Component<DemoProps, any>
   }
 }
 
-React.render(<App test="lolz" />, document.body);
-
-/*
-var routes =
-(
-  <Route name="app" handler={App} path="/">
-	</Route>
-);
-
-Router.run(routes, function(Handler)
-{
-  React.render(<Handler />, document.body);
-});
-*/
+ReactDOM.render(<App test="lolz" />, document.getElementById("react"));
