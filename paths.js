@@ -9,7 +9,7 @@ var paths =
     },
     web_client:
     {
-        entry: path.resolve("./source/web_client", "index.tsx"),
+        entry: path.resolve("./source/web_client", "index.ts"),
         source: path.resolve("./source/web_client"),
         output: path.resolve("./wwwroot/app")
     }

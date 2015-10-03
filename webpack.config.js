@@ -14,8 +14,14 @@ module.exports =
   {
     loaders:
     [
-      { test: /\.ts$/, loader: 'ts-loader' },
-      { test: /\.tsx$/, loader: 'ts-loader' }
+      {
+        test: /\.ts$/,
+        loader: 'ts-loader'
+      },
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
+      }
     ]
   },
   devtool: "source-map",
@@ -25,5 +31,9 @@ module.exports =
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     })
-  ]
+  ],
+  node:
+  {
+    fs: "empty"
+  }
 }

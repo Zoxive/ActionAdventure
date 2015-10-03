@@ -26,9 +26,7 @@
         "./config/inputEmitter.ts",
         "./config/keys.ts",
         "./config/mouse.ts",
-        "./handler/playerhandler.tsx",
-        "./index.tsx",
-        "./pawns/player.tsx"
+        "./index.ts"
     ],
     "scripts": {
         "postbuild": "find . -type f -name '*.js' -delete -o -name '*.js.map' -delete"

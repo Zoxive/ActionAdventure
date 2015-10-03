@@ -1,3 +1,3 @@
 # ActionAdventure
 
-Mostly me learning how to NodeJS, Typescript, ReactJS all at once.
+Mostly me learning how to NodeJS, Typescript, PixiJS all at once.
