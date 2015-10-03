@@ -10,7 +10,7 @@
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
         "declaration": false,
-        "noImplicitAny": false,
+        "noImplicitAny": true,
         "removeComments": true,
         "noLib": false,
         "preserveConstEnums": true,
@@ -22,11 +22,9 @@
         "!./node_modules/**/*"
     ],
     "files": [
-        "./config/IInputDictionary.ts",
-        "./config/inputEmitter.ts",
-        "./config/keys.ts",
-        "./config/mouse.ts",
-        "./index.ts"
+        "./index.ts",
+        "./keyboard.ts",
+        "./pawn.ts"
     ],
     "scripts": {
         "postbuild": "find . -type f -name '*.js' -delete -o -name '*.js.map' -delete"

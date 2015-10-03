@@ -1,6 +1,7 @@
 /// <reference path="../../typings/tsd.d.ts" />
 
 import PIXI = require("pixi.js");
+import Pawn = require("./pawn.ts");
 
 var stage = new PIXI.Container();
 var renderer = PIXI.autoDetectRenderer(500, 500, { antialias: true, transparent: true, resolution: 1, autoResize: true });
@@ -11,28 +12,19 @@ renderer.view.style.display = "block";
 document.getElementById("app")
   .appendChild(renderer.view);
 
-//
-//
 PIXI.loader
   .add("hulk", "assets/hulk.json")
   .load(setup);
 
-function setup(loader, resources)
+var pawn:Pawn;
+
+function setup(loader:PIXI.loaders.Loader, resources:any)
 {
   var hulk = resources.hulk;
-  var pawnTexture = hulk.textures["12.png"];
 
-  var frames = [];
-  frames.push(hulk.textures["12.png"]);
-  frames.push(hulk.textures["13.png"]);
-  frames.push(hulk.textures["14.png"]);
-  frames.push(hulk.textures["15.png"]);
+  pawn = new Pawn(hulk);
 
-  var movie = new PIXI.extras.MovieClip(frames);
-  movie.animationSpeed = 0.15;
-  //movie.play();
-
-  stage.addChild(movie);
+  stage.addChild(pawn);
 
   render();
 }
@@ -40,6 +32,8 @@ function setup(loader, resources)
 function render()
 {
   renderer.render(stage);
+
+  pawn.render();
 
   requestAnimationFrame(render);
 }
