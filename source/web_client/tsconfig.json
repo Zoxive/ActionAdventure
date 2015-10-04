@@ -22,9 +22,14 @@
         "!./node_modules/**/*"
     ],
     "files": [
+        "./character/characterdirection.ts",
+        "./character/movementvector.ts",
         "./index.ts",
-        "./keyboard.ts",
-        "./pawn.ts"
+        "./inputcomponent.ts",
+        "./keyboardevents.ts",
+        "./pawn/pawn.ts",
+        "./pawn/pawnanimation.ts",
+        "./pawn/pawncontroller.ts"
     ],
     "scripts": {
         "postbuild": "find . -type f -name '*.js' -delete -o -name '*.js.map' -delete"
