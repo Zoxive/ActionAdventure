@@ -50,7 +50,7 @@ class MovementVector
     return this.isMovingOnY() || this.isMovingOnX();
   }
 
-  public isMovingDiag():boolean
+  public isMovingDiagonal():boolean
   {
     return this.isMovingOnX() && this.isMovingOnY();
   }

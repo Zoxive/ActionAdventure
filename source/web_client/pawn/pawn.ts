@@ -63,7 +63,7 @@ class Pawn extends PIXI.Container
   {
     var speed = 2;
 
-    if (this.movement.isMovingDiag())
+    if (this.movement.isMovingDiagonal())
       speed = 1.5;
 
     this.y += this.movement.y * speed;

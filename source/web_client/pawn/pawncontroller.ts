@@ -29,11 +29,21 @@ class PawnController
     this.pawn = pawn;
   }
 
+  getValue(value:number):number
+  {
+    var v = value * 0.05;
+
+    if (v < 2)
+      return 2;
+    else
+      return 2;
+  }
+
   moveUp(e:InputComponent.AxisEvent)
   {
     if (this.pawn != null)
     {
-      this.pawn.addMovementInput(new MovementVector(0, e.value * -1));
+      this.pawn.addMovementInput(new MovementVector(0, this.getValue(e.value) * -1));
     }
   }
 
@@ -41,7 +51,7 @@ class PawnController
   {
     if (this.pawn != null)
     {
-      this.pawn.addMovementInput(new MovementVector(0, e.value * 1));
+      this.pawn.addMovementInput(new MovementVector(0, this.getValue(e.value) * 1));
     }
   }
 
@@ -49,7 +59,7 @@ class PawnController
   {
     if (this.pawn != null)
     {
-      this.pawn.addMovementInput(new MovementVector(e.value, 0));
+      this.pawn.addMovementInput(new MovementVector(this.getValue(e.value), 0));
     }
   }
 
@@ -57,7 +67,7 @@ class PawnController
   {
     if (this.pawn != null)
     {
-      this.pawn.addMovementInput(new MovementVector(e.value * -1, 0));
+      this.pawn.addMovementInput(new MovementVector(this.getValue(e.value) * -1, 0));
     }
   }
 }

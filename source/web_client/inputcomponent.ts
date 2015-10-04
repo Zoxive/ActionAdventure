@@ -72,7 +72,7 @@ export class InputComponent
     {
       var key = this.map[axis];
 
-      if (key == x.keyCode)
+      if (key == x.keyCode && this.downAxis[axis] == null)
       {
         this.downAxis[axis] = x;
       }
@@ -107,10 +107,15 @@ export class InputComponent
 
   public tick()
   {
+    var now = new Date().getTime();
+
     for (var axis in this.downAxis)
     {
-      // TODO Could use event timestamp and get how long the button is down
-      var event = new AxisEvent(1);
+      var keyboardEvent = this.downAxis[axis];
+
+      var diff = now - keyboardEvent.timeStamp;
+
+      var event = new AxisEvent(diff);
 
       var axisInput = this.axisInputs[axis];
       if (axisInput)
