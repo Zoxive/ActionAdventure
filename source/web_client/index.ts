@@ -5,7 +5,7 @@ import Pawn = require("./pawn/pawn.ts");
 import PawnController = require("./pawn/pawncontroller.ts");
 
 var stage = new PIXI.Container();
-var renderer = PIXI.autoDetectRenderer(500, 500, { antialias: true, transparent: true, resolution: 1, autoResize: true });
+var renderer = PIXI.autoDetectRenderer(window.innerWidth, window.innerHeight, { antialias: true, transparent: true, resolution: 1, autoResize: true });
 
 renderer.view.style.position = "absolute";
 renderer.view.style.display = "block";

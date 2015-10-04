@@ -26,7 +26,6 @@
         "./character/movementvector.ts",
         "./index.ts",
         "./inputcomponent.ts",
-        "./keyboardevents.ts",
         "./pawn/pawn.ts",
         "./pawn/pawnanimation.ts",
         "./pawn/pawncontroller.ts"
