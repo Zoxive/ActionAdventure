@@ -147,7 +147,7 @@
             <key>data</key>
             <struct type="DataFile">
                 <key>name</key>
-                <filename></filename>
+                <filename>wwwroot/assets/hulk.json</filename>
             </struct>
         </map>
         <key>multiPack</key>
@@ -189,7 +189,9 @@
             <enum type="SpriteSettings::PivotPoint">Center</enum>
         </struct>
         <key>fileList</key>
-        <array/>
+        <array>
+            <filename>assets/pawn/hulk</filename>
+        </array>
         <key>ignoreFileList</key>
         <array/>
         <key>replaceList</key>

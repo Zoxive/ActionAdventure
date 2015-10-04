@@ -174,7 +174,8 @@ class Pawn extends PIXI.Container
     this.x += this.vx;
     this.y += this.vy;
 
-    if (this.vx == 0 && this.vy == 0)
+    var noMovement = this.vx == 0 && this.vy == 0;
+    if (noMovement)
       this.animation.stop();
     else
       this.animation.play(this.direction);
