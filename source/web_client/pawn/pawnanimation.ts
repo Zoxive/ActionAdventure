@@ -12,11 +12,11 @@ class PawnAnimation extends PIXI.Container
 
   animations:PawnAnimationDict;
 
-  constructor(direction:CharacterDirection, upFrames:PIXI.Texture[], downFrames:PIXI.Texture[], rightFrames:PIXI.Texture[], leftFrames:PIXI.Texture[])
+  constructor(defaultDirection:CharacterDirection, upFrames:PIXI.Texture[], downFrames:PIXI.Texture[], rightFrames:PIXI.Texture[], leftFrames:PIXI.Texture[])
   {
     super();
 
-    this.currentDirection = direction;
+    this.currentDirection = defaultDirection;
     this.animations = new PawnAnimationDict();
 
     this.animations[CharacterDirection.up] = this.createSpriteClip(upFrames);
@@ -24,8 +24,17 @@ class PawnAnimation extends PIXI.Container
     this.animations[CharacterDirection.right] = this.createSpriteClip(rightFrames);
     this.animations[CharacterDirection.left] = this.createSpriteClip(leftFrames);
 
-    this.currentMovie = this.animations[direction];
+    this.currentMovie = this.animations[defaultDirection];
     this.currentMovie.visible = true;
+  }
+
+  public set tint(tint:number)
+  {
+    for (var direction in this.animations)
+    {
+      var movie = this.animations[direction];
+      movie.tint = tint;
+    }
   }
 
   createSpriteClip(frames:PIXI.Texture[]):PIXI.extras.MovieClip

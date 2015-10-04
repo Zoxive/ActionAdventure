@@ -44,6 +44,8 @@ class Pawn extends PIXI.Container
     this.animation = new PawnAnimation(CharacterDirection.down, upFrames, downFrames, rightFrames, leftFrames);
 
     this.addChild(this.animation);
+
+    //this.animation.tint = Math.random() * 0xFFFFFF;
   }
 
   addMovementInput(movement: MovementVector)
