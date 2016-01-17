@@ -5,19 +5,19 @@
   "main": "index.js",
   "dependencies": {
     "express": "^4.13.3",
-    "gulp": "^3.9.0",
-    "json-loader": "^0.5.3",
+    "json-loader": "^0.5.4",
     "keymaster": "^1.6.2",
-    "pixi.js": "^3.0.7",
-    "ts-loader": "^0.5.5",
-    "typescript": "^1.6.2"
+    "pixi.js": "^3.0.9",
+    "ts-loader": "^0.7.2",
+    "typescript": "^1.7.5"
   },
   "devDependencies": {
-    "del": "^2.0.2",
-    "gulp-typescript": "^2.9.0",
-    "tsd": "^0.6.4",
-    "webpack": "^1.12.2",
-    "webpack-dev-server": "^1.12.0"
+    "del": "^2.2.0",
+    "gulp": "^3.9.0",
+    "gulp-typescript": "^2.10.0",
+    "tsd": "^0.6.5",
+    "webpack": "^1.12.11",
+    "webpack-dev-server": "^1.14.1"
   },
   "scripts": {
     "build": "gulp build",
